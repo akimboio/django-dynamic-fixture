@@ -2,6 +2,7 @@
 from datetime import datetime, date, timedelta
 from decimal import Decimal
 import threading
+import uuid
 
 from django_dynamic_fixture.ddf import DataFixture
 from django_dynamic_fixture.django_helper import field_is_unique
@@ -91,6 +92,9 @@ class SequentialDataFixture(DataFixture):
 
     def commaseparatedintegerfield_config(self, field, key):
         return self.charfield_config(field, key)
+
+    def uuidfield_config(self, filed, key):
+        return uuid.uuid1()
 
     # BOOLEAN
     def booleanfield_config(self, field, key):

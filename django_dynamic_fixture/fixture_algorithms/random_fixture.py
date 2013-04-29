@@ -3,6 +3,7 @@ from datetime import datetime, date, timedelta
 from decimal import Decimal
 import random
 import string
+import uuid
 
 try:
     from django.utils.timezone import now
@@ -58,6 +59,9 @@ class RandomDataFixture(DataFixture):
 
     def commaseparatedintegerfield_config(self, field, key):
         return unicode(random.randint(1, field.max_length)) #FIXME:
+
+    def uuidfield_config(self, filed, key):
+        return uuid.uuid1()
 
     # BOOLEAN
     def booleanfield_config(self, field, key):
