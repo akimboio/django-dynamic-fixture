@@ -94,7 +94,7 @@ class SequentialDataFixture(DataFixture):
         return self.charfield_config(field, key)
 
     def uuidfield_config(self, filed, key):
-        return uuid.uuid1()
+        return uuid.uuid4()
 
     # BOOLEAN
     def booleanfield_config(self, field, key):

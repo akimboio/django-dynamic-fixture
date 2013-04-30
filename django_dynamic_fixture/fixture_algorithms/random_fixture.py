@@ -61,7 +61,7 @@ class RandomDataFixture(DataFixture):
         return unicode(random.randint(1, field.max_length)) #FIXME:
 
     def uuidfield_config(self, filed, key):
-        return uuid.uuid1()
+        return uuid.uuid4()
 
     # BOOLEAN
     def booleanfield_config(self, field, key):
